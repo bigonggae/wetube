@@ -1,38 +1,54 @@
 export const videos = [
-    {
-        id:324393,
-        title: 'Video awesome',
-        description: 'This is something I love',
-        views: 24,
-        videoFile: "https://www.youtube.com/embed/F9Bo89m2f6g",
-        creator: {
-            id: 797979,
-            name: "Hans",
-            email: "Hans@lets.co"
-        }
-    },
-    {
-        id:12322,
-        title: 'Video Super',
-        description: 'This is something I love',
-        views: 24,
-        videoFile: "https://www.youtube.com/embed/F9Bo89m2f6g",
-        creator: {
-            id: 797979,
-            name: "Hans",
-            email: "Hans@lets.co"
-        }
-    },
-    {
-        id:878787,
-        title: 'Video Good',
-        description: 'This is something I love',
-        views: 24,
-        videoFile: "https://www.youtube.com/embed/F9Bo89m2f6g",
-        creator: {
-            id: 797979,
-            name: "Hans",
-            email: "Hans@lets.co"
-        }
+  {
+    id: 324393,
+    title: "Video awesome",
+    description: "This is something I love",
+    views: 24,
+    videoFile:
+      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
+    creator: {
+      id: 121212,
+      name: "Nicolas",
+      email: "nico@las.com"
     }
+  },
+  {
+    id: 1212121,
+    title: "Video super",
+    description: "This is something I love",
+    views: 24,
+    videoFile:
+      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
+    creator: {
+      id: 121212,
+      name: "Nicolas",
+      email: "nico@las.com"
+    }
+  },
+  {
+    id: 55555,
+    title: "Video nice",
+    description: "This is something I love",
+    views: 24,
+    videoFile:
+      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
+    creator: {
+      id: 121212,
+      name: "Nicolas",
+      email: "nico@las.com"
+    }
+  },
+  {
+    id: 11111,
+    title: "Video perfect",
+    description: "This is something I love",
+    views: 24,
+    videoFile:
+      "https://archive.org/download/BigBuckBunny_124/Content/big_buck_bunny_720p_surround.mp4",
+    creator: {
+      id: 121212,
+      name: "Nicolas",
+      email: "nico@las.com"
+    }
+  }
 ];
