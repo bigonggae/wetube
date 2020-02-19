@@ -1,6 +1,4 @@
-
 import routes from "../routes";
-
 export const home = (req, res) => {
   res.render("home", { pageTitle: "Home", videos });
 };
@@ -19,8 +17,8 @@ export const postUpload = (req, res) => {
   const {
     body: { file, title, description }
   } = req;
-  // To Do: Up load and save video
-  res.redirect(routes.videoDetail(55555))
+  // To Do: Upload and save video
+  res.redirect(routes.videoDetail(324393));
 };
 
 export const videoDetail = (req, res) =>

@@ -1,5 +1,4 @@
 import routes from "./routes";
-import { truncate } from "fs";
 
 export const localsMiddleware = (req, res, next) => {
   res.locals.siteName = "WeTube";

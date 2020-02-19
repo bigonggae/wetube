@@ -2,10 +2,10 @@ import express from "express";
 import routes from "../routes";
 import { home, search } from "../controllers/videoController";
 import {
-  getJoin,  
+  getJoin,
+  getLogin,
   logout,
   postJoin,
-  getLogin,
   postLogin
 } from "../controllers/userController";
 
@@ -16,7 +16,6 @@ globalRouter.post(routes.join, postJoin);
 
 globalRouter.get(routes.login, getLogin);
 globalRouter.post(routes.login, postLogin);
-
 
 globalRouter.get(routes.home, home);
 globalRouter.get(routes.search, search);
