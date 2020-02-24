@@ -3,7 +3,7 @@ import routes from "../routes";
 import {
   getUpload,
   postUpload,
-  videoDetail,  
+  videoDetail,
   deleteVideo,
   getEditVideo,
   postEditVideo
@@ -12,7 +12,7 @@ import { uploadVideo } from "../middlewares";
 
 const videoRouter = express.Router();
 
-//Upload
+// Upload
 videoRouter.get(routes.upload, getUpload);
 videoRouter.post(routes.upload, uploadVideo, postUpload);
 
