@@ -1,5 +1,3 @@
-import axios from "axios";
-
 const videoContainer = document.getElementById("jsVideoPlayer");
 const videoPlayer = document.querySelector("#jsVideoPlayer video");
 const playBtn = document.getElementById("jsPlayButton");
@@ -10,8 +8,8 @@ const totalTime = document.getElementById("totalTime");
 const volumeRange = document.getElementById("jsVolume");
 
 const registerView = () => {
-  const videoID = window.location.href.split("/videos/")[1];
-  fetch(`/api/${videoID}/view`, {
+  const videoId = window.location.href.split("/videos/")[1];
+  fetch(`/api/${videoId}/view`, {
     method: "POST"
   });
 };
@@ -32,9 +30,9 @@ function handleVolumeClick() {
     volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
     volumeRange.value = videoPlayer.volume;
   } else {
+    volumeRange.value = 0;
     videoPlayer.muted = true;
     volumeBtn.innerHTML = '<i class="fas fa-volume-mute"></i>';
-    volumeRange.value = 0;
   }
 }
 
@@ -85,14 +83,14 @@ const formatDate = seconds => {
   return `${hours}:${minutes}:${totalSeconds}`;
 };
 
+function getCurrentTime() {
+  currentTime.innerHTML = formatDate(Math.floor(videoPlayer.currentTime));
+}
+
 function setTotalTime() {
   const totalTimeString = formatDate(videoPlayer.duration);
   totalTime.innerHTML = totalTimeString;
   setInterval(getCurrentTime, 1000);
-}
-
-function getCurrentTime() {
-  currentTime.innerHTML = formatDate(Math.floor(videoPlayer.currentTime));
 }
 
 function handleEnded() {
@@ -108,7 +106,7 @@ function handleDrag(event) {
   videoPlayer.volume = value;
   if (value >= 0.6) {
     volumeBtn.innerHTML = '<i class="fas fa-volume-up"></i>';
-  } else if (value >= 0.3) {
+  } else if (value >= 0.2) {
     volumeBtn.innerHTML = '<i class="fas fa-volume-down"></i>';
   } else {
     volumeBtn.innerHTML = '<i class="fas fa-volume-off"></i>';

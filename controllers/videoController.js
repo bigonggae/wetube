@@ -76,7 +76,7 @@ export const getEditVideo = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id);
-    if (video.cretor !== req.user.id) {
+    if (video.creator !== req.user.id) {
       throw Error();
     } else {
       res.render("editVideo", { pageTitle: `Edit ${video.title}`, video });
@@ -107,7 +107,7 @@ export const deleteVideo = async (req, res) => {
   } = req;
   try {
     const video = await Video.findById(id);
-    if (video.cretor !== req.user.id) {
+    if (video.creator !== req.user.id) {
       throw Error();
     } else {
       await Video.findOneAndRemove({ _id: id });
@@ -120,7 +120,7 @@ export const deleteVideo = async (req, res) => {
 
 // Register Video View
 
-export const postRegistterView = async (req, res) => {
+export const postRegisterView = async (req, res) => {
   const {
     params: { id }
   } = req;
@@ -141,7 +141,8 @@ export const postRegistterView = async (req, res) => {
 export const postAddComment = async (req, res) => {
   const {
     params: { id },
-    body: { comment }
+    body: { comment },
+    user
   } = req;
   try {
     const video = await Video.findById(id);
